@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.controls {
+    width: 300px;
+    background: #2d2d2d; /* Dark controls background */
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+    overflow-y: auto;
+}
+
+.controls h1 {
+    margin-bottom: 20px;
+    color: #ffffff; /* White heading */
+    font-size: 20px;
+}
+
+.shape-selector {
+    margin-bottom: 20px;
+}
+
+.shape-selector label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #e0e0e0; /* Light label text */
+}
+
+.shape-selector input[type="radio"] {
+    margin-right: 8px;
+}
+
+.parameters {
+    margin-bottom: 20px;
+}
+
+.param-group {
+    background: #3a3a3a; /* Dark parameter group background */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #555; /* Darker border */
+}
+
+.param-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #e0e0e0; /* Light label color */
+    font-size: 13px;
+}
+
+.param-group input[type="range"] {
+    width: 100%;
+    margin: 8px 0;
+    height: 6px;
+    border-radius: 3px;
+    background: #555; /* Darker slider track */
+    outline: none;
+}
+
+.param-group input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.param-group span {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #3498db;
+    font-size: 12px; /* Reduced */
+}
+
+#generate-btn {
+    width: 100%;
+    padding: 12px;
+    background: #4a90e2; /* Slightly adjusted blue for dark mode */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 20px;
+}
+
+#generate-btn:hover {
+    background: #357abd; /* Darker hover state */
+}
+
+.info {
+    background: #2a3f5f; /* Dark blue info background */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #4a90e2;
+}
+
+.info p {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #e0e0e0; /* Light text */
+}
+
+.instructions {
+    background: #4a3f2a; /* Dark yellow background */
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #d4a853; /* Adjusted gold color */
+    margin-bottom: 20px; /* Add consistent spacing */
+}
+
+.instructions p {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #e0e0e0; /* Light text */
+}
+
+.instructions ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.instructions li {
+    margin: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 12px;
+    color: #e0e0e0; /* Light text */
+}
+
+.instructions li:before {
+    content: "•";
+    color: #d4a853; /* Adjusted gold bullet */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.canvas-container {
+    flex: 1;
+    background: #1a1a1a; /* Dark canvas container background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#canvas {
+    border: 1px solid #555; /* Darker canvas border */
+    cursor: grab;
+    background: white; /* Keep canvas background white for grid visibility */
+}
+
+#canvas:active {
+    cursor: grabbing;
+}
+
+#canvas.zooming {
+    cursor: zoom-in;
+}
+
+/* Add styles for the description */
+.description {
+    background: #2a3a4a; /* Dark blue-gray background */
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #4a90e2;
+}
+
+.description p {
+    margin: 5px 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #e0e0e0; /* Light text */
+}
+
+.description p:first-child {
+    font-weight: 600;
+    font-size: 13px;
+    color: #ffffff; /* White for "About:" heading */
+}

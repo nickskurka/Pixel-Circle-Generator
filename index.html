@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimal Pixelated Ellipse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <h1>Pixelated Ellipse Algorithm</h1>
+
+            <div class="shape-selector">
+                <label>
+                    <input type="radio" name="shape" value="circle" checked>
+                    Circle
+                </label>
+                <label>
+                    <input type="radio" name="shape" value="ellipse">
+                    Ellipse
+                </label>
+            </div>
+
+            <div class="parameters">
+                <div id="circle-params" class="param-group">
+                    <label for="radius">Radius:</label>
+                    <input type="range" id="radius" min="3" max="100" value="15" step="1">
+                    <span id="radius-value">15</span>
+                </div>
+
+                <div id="ellipse-params" class="param-group" style="display: none;">
+                    <label for="width">Width:</label>
+                    <input type="range" id="width" min="3" max="100" value="20" step="1">
+                    <span id="width-value">20</span>
+
+                    <label for="height">Height:</label>
+                    <input type="range" id="height" min="3" max="100" value="15" step="1">
+                    <span id="height-value">15</span>
+                </div>
+            </div>
+
+            <button id="generate-btn">Generate</button>
+
+            <div class="info">
+                <p>Pixels: <span id="pixel-count">0</span></p>
+                <p>Zoom: <span id="zoom-level">1.0x</span></p>
+            </div>
+
+            <div class="instructions">
+                <p><strong>Controls:</strong></p>
+                <ul>
+                    <li>Mouse wheel: Zoom in/out</li>
+                    <li>Click and drag: Pan around</li>
+                    <li>Sliders: Real-time shape updates</li>
+                </ul>
+            </div>
+
+            <div class="description">
+                <p><strong>About:</strong></p>
+                <p>A basic application that implements an algorithm for generating pixel-accurate circles and ellipses on a discrete grid, minimizing deviation from their ideal mathematical forms. It is useful for applications such as pixel art, procedural content generation (e.g., Minecraft structures), scalable raster graphics, and geometric visualization. The interactive interface allows users to adjust parameters and observe the resulting shapes in real time.</p>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="canvas" width="800" height="600"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
